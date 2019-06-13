@@ -13,9 +13,18 @@
 </head>
 
 <body>
+	git reset --soft HEAD^   -> undo last commit and save changes  
+	git reset --hard HEAD~1  -> undo last commit and remove changes
+	git reset --hard HEAD~2  -> undo 2 last commits and remove changes
+	git revert commit-hash  -> create new commit which reverts last commit
+	git checkout .  -> remove all uncommitted changes
+	git checkout filename -> undo changes in specific file
+	git clear -df  -> remove all untracked files
+	git rm filename -> remove file from index, after your did git add filename 
+	git commit --amend -> change message of last commit
 
-
-
+	
+	https://stackoverflow.com/questions/23740734/logout-and-login-as-another-user-git-bash
   <script src="js/scripts.js"></script>
 </body>
 </html>
