@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>My First Web Page</h1>
+<p id="myP" >My first paragraph.</p>
+<div id="my-div">
+    <a href="#" class="fill-div"></a>
+</div>
+
+<button type="button" onclick="document.write(5 + 6)">Try it</button>
+<button type="button" id="btn">
+    Kliknij mnie
+</button>
+<table id="tabelka">
+    <tr>
+        <td>1</td>2<td class="czerwone">3</td>
+    </tr>
+    <tr>
+        <td>4</td>5<td class="czerwone">6</td>
+    </tr>
+</table>
+Checkbox: <input type="checkbox" id="myCheck" onclick="myFunction()">
+
+<div id="container">
+        <div onclick="swapDiv(event,this);">1</div>
+        <div onclick="swapDiv(event,this);">2</div>
+        <div onclick="swapDiv(event,this);">3</div>
+ </div>
+ 
+ <textarea id="UserTextArea" oninput="Cal"  cols="50" rows="4">
+Type here your math expression
+</textarea>
+<br>
+<div id="Result">Real Time Output</div>
+
+<script>
+//https://codingislove.com/realtime-search-javascript/
+
+function Cal() {
+
+var UserInput = document.getElementById('UserTextArea').innerHTML;
+
+var UserInput = eval(UserInput);
+document.getElementById("Result").innerHTML = UserInput;
+}
+;
+// Zmienia miejsca
+function swapDiv(event,elem){
+    elem.parentNode.insertBefore(elem,elem.parentNode.firstChild);
+};
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    const btn = document.getElementById('btn');
+    console.log(btn.innerText); //Kliknij mnie
+
+});
+// zmienia kolory elementow
+document.addEventListener("DOMContentLoaded", function() {
+    const tab = document.getElementById('tabelka');
+
+    const td = tab.getElementsByTagName('td'); //pobieramy wszystkie td z tabeli
+    console.log(td.length); //wypisuje sobie ilość elementów w kolekcji
+
+    for (let i=0; i<td.length; i++) { //pętla po wszystkich td
+        td[i].style.backgroundColor = 'red'; //ustawiamy tło komórek na czerwone
+    }
+});
+//Checkbox wypisuje alert po zaznaczeniu!
+function myFunction() {
+  // Get the checkbox
+  var checkBox = document.getElementById("myCheck");
+  // Get the output text
+  var text = document.getElementById("text");
+
+  // If the checkbox is checked, display the output text
+  if (checkBox.checked == true){
+   alert("signed!");
+  } else {
+    text.style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>
